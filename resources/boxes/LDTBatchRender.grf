@@ -7,8 +7,8 @@ import IECore
 import imath
 
 Gaffer.Metadata.registerValue( parent, "serialiser:milestoneVersion", 1, persistent=False )
-Gaffer.Metadata.registerValue( parent, "serialiser:majorVersion", 2, persistent=False )
-Gaffer.Metadata.registerValue( parent, "serialiser:minorVersion", 8, persistent=False )
+Gaffer.Metadata.registerValue( parent, "serialiser:majorVersion", 6, persistent=False )
+Gaffer.Metadata.registerValue( parent, "serialiser:minorVersion", 15, persistent=False )
 Gaffer.Metadata.registerValue( parent, "serialiser:patchVersion", 0, persistent=False )
 
 __children = {}
