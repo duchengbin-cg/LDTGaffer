@@ -39,5 +39,5 @@ class LDTShaderTeapot(LDTShaderBallScene.LDTShaderBallScene):
 
 
 IECore.registerRunTimeTyped(
-    LDTShaderBall, typeName="GafferArnold::LDTShaderTeapot",
+    LDTShaderTeapot, typeName="GafferArnold::LDTShaderTeapot",
 )

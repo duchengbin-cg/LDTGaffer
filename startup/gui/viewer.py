@@ -60,7 +60,9 @@ def __createPhongShader() :
     phong["shader"] = GafferScene.OpenGLShader( "phong" )
     phong["shader"]["name"].setValue( "phong" )
     phong["shader"]["type"].setValue( "gl:surface" )
-    phong["shader"]["parameters"].addChild( Gaffer.StringPlug( "glFragmentSource", defaultValue = inspect.cleandoc(
+    # Note : Recent Gaffer versions prefer namespaced parameters ("gl:fragmentSource"),
+    # but we keep this compatible by using the namespaced form directly.
+    phong["shader"]["parameters"].addChild( Gaffer.StringPlug( "gl:fragmentSource", defaultValue = inspect.cleandoc(
         '''
         in vec3 fragmentN;
         in vec3 geometryP;
@@ -97,7 +99,7 @@ def __createPhongShader() :
         }
     '''
     ) ) )
-    phong["shader"]["out"] = Gaffer.Plug()
+    # OpenGLShader provides an "out" plug in all modern Gaffer versions.
     phong["assignment"]["shader"].setInput( phong["shader"]["out"] )
     phong["out"].setInput( phong["assignment"]["out"] )
 

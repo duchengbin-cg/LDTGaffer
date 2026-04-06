@@ -1,7 +1,7 @@
 # LDTGaffer
 My gaffer toolset, presets, and configs.
 
-```Requires Gaffer 0.58.1.0```
+```Requires Gaffer 1.6.15.0 (Python 3)```
 
 ###### All tools presented here are based solely on examples shared on the [Gaffer community mailing list](https://www.gafferhq.org/community/)
 
