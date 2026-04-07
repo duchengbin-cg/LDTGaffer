@@ -8,6 +8,20 @@ LDTGaffer is a personal Gaffer toolset: presets, configs, startup scripts and bo
 
 ```Requires Gaffer 1.6.15.0 (Python 3)```
 
+**Windows Notes (Paths)**
+
+This toolset is intended to work on Windows as well. To avoid `.grf` reference loading issues and missing icons:
+
+- Set plugin root (recommended):
+  - `LDTGaffer=<absolute path to this repo>`
+  - (Fallback supported) `LDTGAFFER=<absolute path to this repo>`
+- Ensure icons can be found by Gaffer:
+  - `GAFFERUI_IMAGE_PATHS` must include `<LDTGaffer>/icons`
+- Ensure boxed nodes / references can be found:
+  - `GAFFER_REFERENCE_PATHS` must include `<LDTGaffer>/resources/boxes`
+
+> Tip: Paths passed into Gaffer reference loading are normalized to POSIX style (`/`) for cross-platform consistency.
+
 **Credits / Origin**
 
 - This repository was originally based on: https://github.com/ezequielmastrasso/LDTGaffer
@@ -132,6 +146,20 @@ LDTGaffer 是一套个人 Gaffer 工具集：包含预设、配置、startup 脚
 **运行环境**
 
 ```需要 Gaffer 1.6.15.0 (Python 3)```
+
+**Windows 说明（路径）**
+
+本工具集同样面向 Windows 环境。为避免 `.grf` 引用加载失败与图标丢失，请确认：
+
+- 设置插件根目录（推荐）：
+  - `LDTGaffer=<本仓库的绝对路径>`
+  -（兼容）`LDTGAFFER=<本仓库的绝对路径>`
+- 确保 Gaffer 能找到图标：
+  - `GAFFERUI_IMAGE_PATHS` 需包含 `<LDTGaffer>/icons`
+- 确保 Gaffer 能找到 boxed nodes / references：
+  - `GAFFER_REFERENCE_PATHS` 需包含 `<LDTGaffer>/resources/boxes`
+
+> 提示：传给 Gaffer 引用加载的路径会被规范化为 POSIX 风格（`/`），以保证跨平台一致性。
 
 **来源 / 致谢**
 
