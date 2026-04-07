@@ -395,7 +395,7 @@ Gaffer.Metadata.registerValue( __children["shaderBall"], 'noduleLayout:customGad
 Gaffer.Metadata.registerValue( __children["shaderBall"], 'noduleLayout:customGadget:addButtonBottom:visible', False )
 Gaffer.Metadata.registerValue( __children["shaderBall"], 'noduleLayout:customGadget:addButtonLeft:visible', False )
 Gaffer.Metadata.registerValue( __children["shaderBall"], 'noduleLayout:customGadget:addButtonRight:visible', False )
-__children["shaderBall"]["SceneReader"]["fileName"].setValue( '$LDTGAFFER/resources/assets/shaderBall/shaderBall.abc' )
+__children["shaderBall"]["SceneReader"]["fileName"].setValue( '${LDTGaffer}/resources/assets/shaderBall/shaderBall.abc' )
 __children["shaderBall"]["SceneReader"]["refreshCount"].setValue( 5 )
 __children["shaderBall"]["SceneReader"]["__uiPosition"].setValue( imath.V2f( 64.8877029, 108.176445 ) )
 __children["shaderBall"]["Prune"]["in"].setInput( __children["shaderBall"]["MeshType"]["out"] )
@@ -615,7 +615,7 @@ Gaffer.Metadata.registerValue( __children["teapot"], 'noduleLayout:customGadget:
 Gaffer.Metadata.registerValue( __children["teapot"], 'noduleLayout:customGadget:addButtonBottom:visible', False )
 Gaffer.Metadata.registerValue( __children["teapot"], 'noduleLayout:customGadget:addButtonLeft:visible', False )
 Gaffer.Metadata.registerValue( __children["teapot"], 'noduleLayout:customGadget:addButtonRight:visible', False )
-__children["teapot"]["__teapot"]["fileName"].setValue( '${LDTGAFFER}/resources/assets/teapot/teapot.abc' )
+__children["teapot"]["__teapot"]["fileName"].setValue( '${LDTGaffer}/resources/assets/teapot/teapot.abc' )
 __children["teapot"]["__teapot"]["__uiPosition"].setValue( imath.V2f( 135.023972, -193.120087 ) )
 __children["teapot"]["__teapotMeshType"]["in"].setInput( __children["teapot"]["__teapot"]["out"] )
 __children["teapot"]["__teapotMeshType"]["filter"].setInput( __children["teapot"]["__teapotPathFilter"]["out"] )
@@ -676,4 +676,3 @@ Gaffer.Metadata.registerValue( parent, 'noduleLayout:customGadget:addButtonRight
 
 
 del __children
-

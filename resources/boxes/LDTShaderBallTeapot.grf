@@ -28,7 +28,7 @@ __children["BoxOut"] = Gaffer.BoxOut( "BoxOut" )
 parent.addChild( __children["BoxOut"] )
 __children["BoxOut"].setup( GafferScene.ScenePlug( "in", ) )
 __children["BoxOut"].addChild( Gaffer.V2fPlug( "__uiPosition", defaultValue = imath.V2f( 0, 0 ), flags = Gaffer.Plug.Flags.Default | Gaffer.Plug.Flags.Dynamic, ) )
-__children["__teapot"]["fileName"].setValue( '${LDTGAFFER}/resources/assets/teapot/teapot.abc' )
+__children["__teapot"]["fileName"].setValue( '${LDTGaffer}/resources/assets/teapot/teapot.abc' )
 __children["__teapot"]["__uiPosition"].setValue( imath.V2f( 135.023972, -193.120087 ) )
 __children["__teapotMeshType"]["in"].setInput( __children["__teapot"]["out"] )
 __children["__teapotMeshType"]["filter"].setInput( __children["__teapotPathFilter"]["out"] )
@@ -58,4 +58,3 @@ Gaffer.Metadata.registerValue( parent, 'noduleLayout:customGadget:addButtonRight
 
 
 del __children
-
