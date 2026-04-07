@@ -1043,7 +1043,7 @@ Gaffer.Metadata.registerValue( __children["LDTContextEnabledEditScope"], 'nodule
 Gaffer.Metadata.registerValue( __children["LDTContextEnabledEditScope"], 'noduleLayout:customGadget:addButtonBottom:visible', False )
 Gaffer.Metadata.registerValue( __children["LDTContextEnabledEditScope"], 'noduleLayout:customGadget:addButtonLeft:visible', False )
 Gaffer.Metadata.registerValue( __children["LDTContextEnabledEditScope"], 'noduleLayout:customGadget:addButtonRight:visible', False )
-Gaffer.Metadata.registerValue( __children["LDTContextEnabledEditScope"], 'icon', 'assets/resources/icons/noun_fork_white_45683.png' )
+Gaffer.Metadata.registerValue( __children["LDTContextEnabledEditScope"], 'icon', 'noun_fork_white_45683.png' )
 Gaffer.Metadata.registerValue( __children["LDTContextEnabledEditScope"], 'iconScale', 1.5 )
 Gaffer.Metadata.registerValue( __children["LDTContextEnabledEditScope"], 'uiEditor:emptySections', IECore.StringVectorData( [  ] ) )
 Gaffer.Metadata.registerValue( __children["LDTContextEnabledEditScope"], 'uiEditor:emptySectionIndices', IECore.IntVectorData( [  ] ) )
@@ -1053,7 +1053,7 @@ Gaffer.Metadata.registerValue( __children["LDTContextEnabledBox"], 'noduleLayout
 Gaffer.Metadata.registerValue( __children["LDTContextEnabledBox"], 'noduleLayout:customGadget:addButtonBottom:visible', False )
 Gaffer.Metadata.registerValue( __children["LDTContextEnabledBox"], 'noduleLayout:customGadget:addButtonLeft:visible', False )
 Gaffer.Metadata.registerValue( __children["LDTContextEnabledBox"], 'noduleLayout:customGadget:addButtonRight:visible', False )
-Gaffer.Metadata.registerValue( __children["LDTContextEnabledBox"], 'icon', 'assets/resources/icons/noun_fork_white_45683.png' )
+Gaffer.Metadata.registerValue( __children["LDTContextEnabledBox"], 'icon', 'noun_fork_white_45683.png' )
 Gaffer.Metadata.registerValue( __children["LDTContextEnabledBox"], 'iconScale', 1.5 )
 Gaffer.Metadata.registerValue( __children["LDTContextEnabledBox"], 'uiEditor:emptySections', IECore.StringVectorData( [  ] ) )
 Gaffer.Metadata.registerValue( __children["LDTContextEnabledBox"], 'uiEditor:emptySectionIndices', IECore.IntVectorData( [  ] ) )
@@ -1090,9 +1090,8 @@ Gaffer.Metadata.registerValue( parent, 'noduleLayout:customGadget:addButtonTop:v
 Gaffer.Metadata.registerValue( parent, 'noduleLayout:customGadget:addButtonBottom:visible', False )
 Gaffer.Metadata.registerValue( parent, 'noduleLayout:customGadget:addButtonLeft:visible', False )
 Gaffer.Metadata.registerValue( parent, 'noduleLayout:customGadget:addButtonRight:visible', False )
-Gaffer.Metadata.registerValue( parent, 'icon', 'assets/resources/icons/noun_tools_white_3262127.png' )
+Gaffer.Metadata.registerValue( parent, 'icon', 'noun_tools_white_3262127.png' )
 Gaffer.Metadata.registerValue( parent, 'iconScale', 7.0 )
 
 
 del __children
-
