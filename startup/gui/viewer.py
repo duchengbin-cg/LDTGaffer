@@ -10,6 +10,16 @@ import pathlib
 
 print ("LDTGAFFER:startup:gui:viewer")
 
+def __applyOptionalColorSpace( imageReader ) :
+    """
+    Avoid hard-coding a color space name that may not exist in the user's OCIO config.
+    If you want to force a specific colorspace, set env var:
+      LDT_PATTERN_COLORSPACE=ACEScg   (example)
+    """
+    cs = os.environ.get( "LDT_PATTERN_COLORSPACE", "" ).strip()
+    if cs:
+        imageReader["colorSpace"].setValue( cs )
+
 def __ldtRootPath() :
     """
     Return LDTGaffer plugin root in a Windows-safe way.
@@ -38,7 +48,7 @@ def __createLDTPatternShader2k() :
     pattern["image"] = GafferImage.ImageReader( "ImageReader" )
     patternFile = __ldtRootPath() / "resources" / "patterns" / "2048x2048_Texel_Density_Texture_1.png"
     pattern["image"]["fileName"].setValue( __posixPath( patternFile ) )
-    pattern["image"]["colorSpace"].setValue( 'ACES - ACEScg' )
+    __applyOptionalColorSpace( pattern["image"] )
 
     pattern["texture"]["parameters"]["texture"].setInput(pattern["image"]["out"])
     pattern["shaderAssignment"]["shader"].setInput(pattern["texture"]["out"])
@@ -60,7 +70,7 @@ def __createLDTPatternShader4k() :
     pattern["image"] = GafferImage.ImageReader( "ImageReader" )
     patternFile = __ldtRootPath() / "resources" / "patterns" / "4096x4096_Texel_Density_Texture_1.png"
     pattern["image"]["fileName"].setValue( __posixPath( patternFile ) )
-    pattern["image"]["colorSpace"].setValue( 'ACES - ACEScg' )
+    __applyOptionalColorSpace( pattern["image"] )
 
     pattern["texture"]["parameters"]["texture"].setInput(pattern["image"]["out"])
     pattern["shaderAssignment"]["shader"].setInput(pattern["texture"]["out"])
