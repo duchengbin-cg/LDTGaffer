@@ -5,8 +5,27 @@ import GafferScene
 import GafferSceneUI
 import functools
 import inspect
+import os
+import pathlib
 
 print ("LDTGAFFER:startup:gui:viewer")
+
+def __ldtRootPath() :
+    """
+    Return LDTGaffer plugin root in a Windows-safe way.
+    Priority:
+    1) env var `LDTGaffer` (preferred)
+    2) env var `LDTGAFFER` (legacy)
+    3) derive from this file location
+    """
+    root = os.environ.get( "LDTGaffer" ) or os.environ.get( "LDTGAFFER" )
+    if root:
+        return pathlib.Path( root )
+    # .../startup/gui/viewer.py -> .../<repoRoot>
+    return pathlib.Path( __file__ ).resolve().parents[2]
+
+def __posixPath( p ) :
+    return pathlib.Path( p ).resolve().as_posix()
 
 def __createLDTPatternShader2k() :
     pattern = GafferScene.SceneProcessor( "pattern" )
@@ -17,7 +36,8 @@ def __createLDTPatternShader2k() :
     pattern["texture"]["parameters"]["tint"].setValue( imath.Color4f( 1, 1, 1, 1 ) )
     pattern["texture"]["parameters"]["mult"].setValue( 1.0 )
     pattern["image"] = GafferImage.ImageReader( "ImageReader" )
-    pattern["image"]["fileName"].setValue( '${LDTGAFFER}/resources/patterns/2048x2048_Texel_Density_Texture_1.png' )
+    patternFile = __ldtRootPath() / "resources" / "patterns" / "2048x2048_Texel_Density_Texture_1.png"
+    pattern["image"]["fileName"].setValue( __posixPath( patternFile ) )
     pattern["image"]["colorSpace"].setValue( 'ACES - ACEScg' )
 
     pattern["texture"]["parameters"]["texture"].setInput(pattern["image"]["out"])
@@ -38,7 +58,8 @@ def __createLDTPatternShader4k() :
     pattern["texture"]["parameters"]["tint"].setValue( imath.Color4f( 1, 1, 1, 1 ) )
     pattern["texture"]["parameters"]["mult"].setValue( 1.0 )
     pattern["image"] = GafferImage.ImageReader( "ImageReader" )
-    pattern["image"]["fileName"].setValue( '${LDTGAFFER}/resources/patterns/4096x4096_Texel_Density_Texture_1.png' )
+    patternFile = __ldtRootPath() / "resources" / "patterns" / "4096x4096_Texel_Density_Texture_1.png"
+    pattern["image"]["fileName"].setValue( __posixPath( patternFile ) )
     pattern["image"]["colorSpace"].setValue( 'ACES - ACEScg' )
 
     pattern["texture"]["parameters"]["texture"].setInput(pattern["image"]["out"])
